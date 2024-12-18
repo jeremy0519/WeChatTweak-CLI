@@ -14,10 +14,10 @@ struct Constant {
 
 struct App {
     static let root = "/Applications"
-    static let app = root.appending("/WeChat.app")
+    static let app = root.appending("/WeChat (Beta).app")
     static let macos = app.appending("/Contents/MacOS")
-    static let binary = app.appending("/Contents/MacOS/WeChat")
-    static let backup = app.appending("/Contents/MacOS/WeChat.bak")
+    static let binary = app.appending("/Contents/MacOS/Weixin")
+    static let backup = app.appending("/Contents/MacOS/Weixin.bak")
 
     static let framework = macos.appending("/WeChatTweak.framework")
 }
@@ -129,7 +129,7 @@ struct Version: ParsableCommand {
 }
 
 struct Resign: ParsableCommand {
-    static var configuration = CommandConfiguration(abstract: "Force resign WeChat.app")
+    static var configuration = CommandConfiguration(abstract: "Force resign WeChat (Beta).app")
 
     func run() throws {
         firstly {

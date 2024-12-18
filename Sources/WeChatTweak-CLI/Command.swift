@@ -28,10 +28,10 @@ struct Command {
         return Promise { seal in
             do {
                 if FileManager.default.fileExists(atPath: App.backup) {
-                    print("WeChat.bak exists, skip it...")
+                    print("Weixin.bak exists, skip it...")
                 } else {
                     try FileManager.default.copyItem(atPath: App.binary, toPath: App.backup)
-                    print("Created WeChat.bak...")
+                    print("Created Weixin.bak...")
                 }
                 seal.fulfill(())
             } catch {
@@ -48,9 +48,9 @@ struct Command {
                     try FileManager.default.removeItem(atPath: App.binary)
                     try FileManager.default.moveItem(atPath: App.backup, toPath: App.binary)
                     try? FileManager.default.removeItem(atPath: App.framework)
-                    print("Restored WeChat...")
+                    print("Restored Weixin...")
                 } else {
-                    print("WeChat.bak not exists, skip it...")
+                    print("Weixin.bak not exists, skip it...")
                 }
                 seal.fulfill(())
             } catch {
@@ -99,7 +99,7 @@ struct Command {
 
     static func resetPermission() -> Promise<Void> {
         print("------ Reset ScreenCapture privacy permission ------")
-        return Command.execute(command: "tccutil reset ScreenCapture com.tencent.xinWeChat")
+        return Command.execute(command: "tccutil reset ScreenCapture com.tencent.xWeChat")
     }
 
     private static func execute(command: String) -> Promise<Void> {
