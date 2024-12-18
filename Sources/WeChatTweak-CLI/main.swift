@@ -14,7 +14,7 @@ struct Constant {
 
 struct App {
     static let root = "/Applications"
-    static let app = root.appending("/WeChat (Beta).app")
+    static let app = root.appending("/Weixin.app")
     static let macos = app.appending("/Contents/MacOS")
     static let binary = app.appending("/Contents/MacOS/Weixin")
     static let backup = app.appending("/Contents/MacOS/Weixin.bak")
@@ -129,7 +129,7 @@ struct Version: ParsableCommand {
 }
 
 struct Resign: ParsableCommand {
-    static var configuration = CommandConfiguration(abstract: "Force resign WeChat (Beta).app")
+    static var configuration = CommandConfiguration(abstract: "Force resign Weixin.app")
 
     func run() throws {
         firstly {
